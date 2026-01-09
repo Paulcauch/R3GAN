@@ -98,7 +98,13 @@ class InplaceDownsamplerCUDA(nn.Module):
     def forward(self, x):
         return nn.functional.pixel_unshuffle(upfirdn2d.upfirdn2d(x, self.Kernel, padding=self.FilterRadius), 2)
 
-InterpolativeUpsampler = InterpolativeUpsamplerCUDA
-InterpolativeDownsampler = InterpolativeDownsamplerCUDA
-InplaceUpsampler = InplaceUpsamplerCUDA
-InplaceDownsampler = InplaceDownsamplerCUDA
+# InterpolativeUpsampler = InterpolativeUpsamplerCUDA
+# InterpolativeDownsampler = InterpolativeDownsamplerCUDA
+# InplaceUpsampler = InplaceUpsamplerCUDA
+# InplaceDownsampler = InplaceDownsamplerCUDA
+
+### I CHANGED THIS
+InterpolativeUpsampler = InterpolativeUpsamplerReference
+InterpolativeDownsampler = InterpolativeDownsamplerReference
+InplaceUpsampler = InplaceUpsamplerReference
+InplaceDownsampler = InplaceDownsamplerReference
